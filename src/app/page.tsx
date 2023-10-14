@@ -3,7 +3,13 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
 
-export default function Home() {
+export default async function Home() {
+  try {
+    await fetch(new URL("api/register", "http://localhost:3000/"));
+  } catch (error) {
+    throw error;
+  }
+
   return (
     <div className="bg-pageBackground overflow-x-hidden">
       {/* ===Header */}
@@ -157,11 +163,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* ===About Moricol=== */}
       <div className="bg-white py-8 lg:py-12 px-8 xl:px-56">
         <h1 className="text-xl lg:text-3xl text-gray-800 font-extrabold px-4 pb-0 xl:pb-4">
           Our Products
         </h1>
+
         <div className="lg:grid lg:grid-cols-2 lg:gap-4">
           <div className="flex justify-between items-center gap-2 my-4 xl:my-0 p-4 rounded-sm bg-purple-50 border border-purple-500">
             <div className="w-2/5">

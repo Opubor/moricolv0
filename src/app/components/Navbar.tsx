@@ -7,7 +7,6 @@ function Navbar() {
   const [bg, setBg] = useState(false);
 
   const changeBackground = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 350) {
       setBg(true);
     } else {
@@ -42,13 +41,13 @@ function Navbar() {
         </div>
         <div className="flex items-center gap-2">
           <Link
-            href=""
+            href="/register"
             className="text-xs px-4 py-2 bg-themeColor rounded-md text-white shadow-lg shadow-gray-100"
           >
             Register
           </Link>
           <Link
-            href=""
+            href="/login"
             className="text-xs px-4 py-2 bg-white rounded-md text-themeColor shadow-lg shadow-gray-100 border border-themeColor"
           >
             Sign In
@@ -127,7 +126,7 @@ function Navbar() {
         <div>
           <Link
             href=""
-            className="flex items-center gap-2 bg-white xl:bg-themeColor px-2 xl:px-8 py-2 font-semibold text-sm rounded-md"
+            className="flex items-center gap-2 bg-white xl:bg-pageBackground px-2 xl:px-8 py-2 font-semibold text-sm rounded-md"
           >
             <Image
               src="/bar.png"
